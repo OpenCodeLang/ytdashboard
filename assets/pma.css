@@ -1,0 +1,153 @@
+/* General Body Styles */
+body {
+    font-family: monospace;
+    margin: 0;
+    background: #f5f5f5;
+    color: #000;
+}
+
+/* Top Navigation Bar */
+.topbar {
+    background: #e9e9e9;
+    color: #000;
+    padding: 5px 10px;
+    border-bottom: 1px solid #c0c0c0;
+    display: flex;
+    align-items: center;
+}
+.topbar h1 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: normal;
+}
+.topbar img {
+    margin-right: 10px;
+}
+
+
+/* Main container for sidebar and content */
+.container {
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 240px;
+    background: #e9e9e9;
+    height: calc(100vh - 42px);
+    overflow-y: auto;
+    border-right: 1px solid #c0c0c0;
+    padding-top: 10px;
+}
+
+.sidebar .videos-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar .videos-list .video-item-header {
+    padding: 5px 10px;
+    font-weight: bold;
+    color: #000;
+}
+
+
+.sidebar .videos-list .video-item a {
+    display: block;
+    padding: 8px 10px 8px 20px;
+    text-decoration: none;
+    color: #000;
+    border-bottom: 1px solid #ddd;
+}
+
+.sidebar .videos-list .video-item a:hover {
+    background: #d1d1d1;
+}
+
+.sidebar .videos-list .video-item a.active {
+    background: #6c757d;
+    color: white;
+    font-weight: bold;
+}
+
+
+/* Main Content Area */
+.main {
+    flex-grow: 1;
+    padding: 15px;
+    background: #fff;
+}
+
+.main h1 {
+    font-size: 20px;
+    color: #000;
+    margin-top: 0;
+    border-bottom: 1px solid #c0c0c0;
+    padding-bottom: 10px;
+}
+
+.video-container {
+    margin-bottom: 20px;
+}
+
+.stats {
+    display: flex;
+    gap: 20px;
+    margin: 15px 0;
+    background: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ddd;
+}
+
+.stats p {
+    margin: 0;
+    font-size: 12px;
+}
+
+.stats strong {
+    color: #000;
+}
+
+/* Comments Table */
+.comments-section h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+table.comments {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border: 1px solid #c0c0c0;
+}
+
+table.comments th,
+table.comments td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    font-size: 12px;
+}
+
+table.comments th {
+    background: #e9e9e9;
+    font-weight: bold;
+    color: #000;
+}
+
+/* Banners and other small elements */
+.banner {
+    background: #d4edda;
+    color: #155724;
+    padding: 5px 10px;
+    display: inline-block;
+    margin: 10px 0;
+    font-size: 12px;
+    border: 1px solid #c3e6cb;
+}
+
+iframe {
+    border: 1px solid #ddd;
+}
