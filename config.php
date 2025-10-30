@@ -8,9 +8,9 @@ if (file_exists(__DIR__ . '/.env')) {
 
 session_start();
 
-define('ADMIN_USER', $_ENV['ADMIN_USER']);
-define('ADMIN_PASS', $_ENV['ADMIN_PASS']);
-define('OAUTH_CLIENT_ID', $_ENV['OAUTH_CLIENT_ID']);
-define('OAUTH_CLIENT_SECRET', $_ENV['OAUTH_CLIENT_SECRET']);
-define('OAUTH_REDIRECT_URI', $_ENV['OAUTH_REDIRECT_URI']);
-define('CHANNEL_ID', $_ENV['CHANNEL_ID']);
+define('ADMIN_USER', getenv('ADMIN_USER'));
+define('ADMIN_PASS', getenv('ADMIN_PASS'));
+define('OAUTH_CLIENT_ID', getenv('OAUTH_CLIENT_ID'));
+define('OAUTH_CLIENT_SECRET', getenv('OAUTH_CLIENT_SECRET'));
+define('OAUTH_REDIRECT_URI', getenv('OAUTH_REDIRECT_URI'));
+define('CHANNEL_ID', getenv('CHANNEL_ID'));
