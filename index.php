@@ -95,6 +95,9 @@ $client->setAccessToken($_SESSION['access_token']);
 
 // --- Delete comment ---
 if (isset($_GET['delete_comment'])) {
+    if (!isset($_GET['csrf_token']) || !validateCsrfToken($_GET['csrf_token'])) {
+        die('Invalid CSRF token.');
+    }
     deleteComment($youtube, $_GET['delete_comment']);
     header('Location: ' . $_SERVER['PHP_SELF'] . '?video=' . $_GET['video']);
     exit;
@@ -190,9 +193,9 @@ if (isset($_GET['filter'])) {
                             ?>
                                 <tr>
                                     <td><?= htmlspecialchars($author) ?></td>
-                                    <td><?= $comment ?></td>
+                                    <td><?= htmlspecialchars($comment) ?></td>
                                     <td>
-                                        <a href="?video=<?= htmlspecialchars($selectedVideoId) ?>&delete_comment=<?= htmlspecialchars($commentId) ?>" onclick="return confirm('Are you sure?')">Delete</a>
+                                        <a href="?video=<?= htmlspecialchars($selectedVideoId) ?>&delete_comment=<?= htmlspecialchars($commentId) ?>&csrf_token=<?= htmlspecialchars(generateCsrfToken()) ?>" onclick="return confirm('Are you sure?')">Delete</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
