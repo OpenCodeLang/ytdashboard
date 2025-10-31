@@ -15,11 +15,66 @@ if (!isset($_SESSION['logged_in'])) {
         exit;
     }
     ?>
-    <form method="post" style="margin:50px;">
-        <input type="text" name="user" placeholder="Username">
-        <input type="password" name="pass" placeholder="Password">
-        <button type="submit">Login</button>
-    </form>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>DJ YouTube Dashboard - Login</title>
+        <link rel="icon" href="https://www.youtube.com/s/desktop/d743f786/img/favicon.ico">
+        <link rel="stylesheet" href="assets/pma.css">
+        <link rel="stylesheet" href="assets/dark.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+            .login-form {
+                width: 300px;
+                padding: 20px;
+                border: 1px solid #c0c0c0;
+                background: #e9e9e9;
+            }
+            .login-form input {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 10px;
+                box-sizing: border-box;
+            }
+            .login-form button {
+                width: 100%;
+                padding: 10px;
+                background: #6c757d;
+                color: white;
+                border: none;
+                cursor: pointer;
+            }
+            body.dark-mode .login-form {
+                background: #1a1a1a;
+                border-color: #444;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="login-container">
+            <div class="topbar" style="justify-content: center;">
+                <img src="https://s.ytimg.com/yts/img/yt_1200-vflhSIVnY.png" alt="Logo" height="24">
+                <h1>YT DASHBOARD</h1>
+            </div>
+            <form method="post" class="login-form">
+                <input type="text" name="user" placeholder="Username" required>
+                <input type="password" name="pass" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        <script>
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark-mode');
+            }
+        </script>
+    </body>
+    </html>
     <?php
     exit;
 }
